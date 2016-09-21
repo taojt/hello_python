@@ -18,7 +18,7 @@ class Student(object):
         self.__name = name
 
     def set_score(self, score):
-        if score >= 0 and score<= 100:
+        if score >= 0 and score <= 100:
             self.__score = score
         else:
             raise ValueError('bad eeror.')
@@ -39,5 +39,3 @@ if __name__ == '__main__':
     bart.set_name("Tom")
     bart.set_score(89)
     print(bart.get_name(), bart.get_score())
-
-
