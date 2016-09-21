@@ -8,6 +8,12 @@ class Student(object):
     def print_score(self):
         print('%s: %s' % (self.__name, self.__score))
 
+    def get_name(self):
+        return self.__name
+
+    def get_score(self):
+        return self.__score
+
 
 if __name__ == '__main__':
     bart = Student('Bart Simpson', 86)
@@ -15,4 +21,7 @@ if __name__ == '__main__':
     bart.print_score()
     lisa.print_score()
     # 访问内部私有变量出错
-    print(bart.__score)
+    # print(bart.__score)
+
+    print(bart.get_name(), bart.get_score())
+
