@@ -1,6 +1,9 @@
 # -*-coding: utf-8 -*-
 # Create by Jiang Tao on 2016/9/21
 class Student(object):
+    # 用__slots__限制该class 实例能添加的属性，但是只对当前类起作用，对继承的子类无效
+    __slots__ = ('__name', '__score')
+
     def __init__(self, name, score):
         self.__name = name
         self.__score = score
@@ -24,6 +27,9 @@ class Student(object):
             raise ValueError('bad eeror.')
 
 
+
+
+
 if __name__ == '__main__':
     bart = Student('Bart Simpson', 86)
     lisa = Student('Lisa Hellen', 100)
@@ -39,3 +45,7 @@ if __name__ == '__main__':
     bart.set_name("Tom")
     bart.set_score(89)
     print(bart.get_name(), bart.get_score())
+
+    # __slots__ test
+    bart.gender = 'male'
+    print(bart.gender)
