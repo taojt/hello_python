@@ -23,3 +23,21 @@ else:
 finally:
     print('finally...')
 print('End. ')
+print()
+
+
+# reraise 异常，抛给上层函数处理
+def foo(s):
+    n = int(s)
+    if n == 0:
+        raise ValueError('invalid value %s' %n)
+    r = 10/n;
+    print('result: ', r)
+
+def bar():
+    try:
+        foo(0)
+    except ValueError as e:
+        print('error: ', e)
+
+bar()
